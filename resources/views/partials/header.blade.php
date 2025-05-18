@@ -25,5 +25,4 @@
 </header>
 
 @push('scripts')
-    <script src="{{ asset('js/header.js') }}"></script>
 @endpush

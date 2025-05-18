@@ -1,5 +1,3 @@
-
-
 <aside class="sidebar">
     <div class="sidebar__wrapper">
         <nav>
@@ -7,7 +5,12 @@
                 <ul class="sidebar__list">
                     @foreach($group as $item)
                         <li class="sidebar__item">
-                            <a href="{{ route($item['route']) }}">{{ $item['label'] }}</a>
+                            @php
+                            $isActive = Route::currentRouteName() === $item['route'];
+                            @endphp
+                            <a href="{{ route($item['route']) }}" class="{{ $isActive ? 'active' : '' }}">
+                                {{ $item['label'] }}
+                            </a>
                         </li>
                     @endforeach
                 </ul>

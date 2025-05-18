@@ -61,8 +61,8 @@
     display: flex;
     list-style-type: none;
     padding: 0;
-    margin: 0;
-    flex-wrap: nowrap;
+    margin: 0 auto var(--spacing-xxl);
+    flex-wrap: wrap;
     gap: var(--spacing-xxl);
     width: 100%;
     overflow-x: auto;
@@ -76,7 +76,15 @@
 }
 
 .slots__item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xxl);
     width: 157px;
+}
+
+.slots__link {
+    text-decoration: none;
+    width: 100%;
     height: 227px;
     background: #054392;
     box-shadow: 
@@ -84,10 +92,6 @@
     0px 5px 18px 0px #00294F;
     border-radius: 20px;
     position: relative;
-}
-
-.slots__link {
-    text-decoration: none;
 }
 
 .slots__img {
@@ -112,4 +116,65 @@
      1px -1px 0 #fff,
     -1px  1px 0 #fff,
      1px  1px 0 #fff;
+}
+
+.slots__btn_delete {
+    background-color: #d9534f;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.slots__btn_delete:hover {
+    background-color: #c9302c;
+}
+
+.slots__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  margin-top: 20px;
+}
+
+.slots__input {
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.2s ease;
+}
+
+.slots__input:focus {
+  outline: none;
+  border-color: #054392;
+}
+
+.slots__button {
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.slots__button_add {
+  background-color: #054392;
+  color: white;
+}
+
+.slots__button_add:hover {
+  background-color: #032858;
+}
+
+.slots__success {
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
 }

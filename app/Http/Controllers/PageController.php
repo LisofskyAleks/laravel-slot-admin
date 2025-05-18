@@ -22,6 +22,7 @@ class PageController extends Controller
             'boutique' => 'Boutique',
             'niveaux-vip' => 'Niveaux VIP',
             'aide' => "Centre d'aide",
+            'voir-tous' => 'Voir tous',
         ];
 
         $title = $titles[$slug] ?? ucfirst(str_replace('-', ' ', $slug));

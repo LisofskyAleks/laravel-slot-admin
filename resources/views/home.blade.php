@@ -10,7 +10,7 @@
         <div class="slots__description">
             <h1 class="slots__title">Top</h1>
             <div class="slots__more">
-                <a href="#">Voir tous</a>
+                <a href="{{ route('page.show', ['slug' => 'voir-tous']) }}">Voir tous</a>
             </div>
         </div>
 
@@ -21,24 +21,22 @@
                         <img class="slots__img" src="{{ $slot->image_url }}" alt="{{ $slot->name }}">
                         <p class="slots__number">{{ $loop->iteration }}</p>
                     </a>
+                    <button class="slots__btn_delete" data-id="{{ $slot->id }}" data-name="{{ $slot->name }}">
+                        Delete
+                    </button>
                 </li>
             @endforeach
         </ul>
 
-        <form method="POST" action="{{ route('slots.store') }}">
+        <form method="POST" action="{{ route('slots.store') }}" class="slots__form">
             @csrf
-            <input type="text" name="name" placeholder="Название" required>
-            <input type="text" name="slug" placeholder="Slug" required>
-            <input type="url" name="image_url" placeholder="URL изображения" required>
-            <button type="submit">Добавить слот</button>
-            <button class="slots__button_delete" data-id="{{ $slot->id }}">Удалить</button>
+            <input type="text" name="name" class="slots__input" placeholder="Name" required>
+            <input type="text" name="slug" class="slots__input" placeholder="Slug" required>
+            <input type="url" name="image_url" class="slots__input" placeholder="URL изображения" required>
+            <button type="submit" class="slots__button slots__button_add">Add new slot</button>
         </form>
-    @if(session('success'))
-        <p style="color: green;">{{ session('success') }}</p>
-    @endif
 
 @endsection
 
 @push('scripts')
-<script src="{{ asset('js/slots.js') }}"></script>
 @endpush
