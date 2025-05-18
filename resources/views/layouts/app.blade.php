@@ -6,6 +6,7 @@
     <title>@yield('title', 'SG Casino')</title>
     <!-- Подключение стилей -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>

@@ -81,4 +81,97 @@
     z-index: -1;
 }
 
+.swiper-horizontal>.swiper-pagination-bullets, 
+.swiper-pagination-bullets.swiper-pagination-horizontal, 
+.swiper-pagination-custom, .swiper-pagination-fraction {
+    left: unset;
+    right: 40px;
+    bottom: 40px;
+    width: fit-content;
+    display: flex;
+    gap: var(--spacing-2xl);
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    transform: rotate(-45deg);
+    background-color: var(--text-white-color);
+    border: 1px solid #FFFFFF80;
+    position: relative;
+}
+
+.swiper-pagination-bullet::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 5px;
+    width: 17px;
+    height: 17px;
+    border: 3px solid #FFFFFF80;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+@media screen and (max-width: 780px) {
+    .main-banner__content-wrapper {
+        left: 0;
+        overflow: hidden;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .slider-content {
+        background: linear-gradient(179.53deg, #054392 0.47%, #032858 99.67%);
+    }
+
+    .main-banner__img-wrapper {
+        height: 375px;
+        overflow: hidden;
+    }
+
+    .main-banner__img {
+        height: 50%;
+        position: absolute;
+        top: 0;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .main-banner__content-wrapper {
+        background: linear-gradient(
+        179.53deg,
+        rgba(5, 67, 146, 0.2) 7%,   
+        rgba(3, 40, 88, 0.4) 39%,     
+        rgba(3, 40, 88, 1) 46.67%     
+        );     
+        bottom: 0;
+        padding: var(--spacing-xl) var(--spacing-xl) 50px;
+        top: unset;
+        justify-content: flex-end;
+    }
+
+    .main-banner__link::before {
+        height: 53px;
+    }
+
+    .swiper-horizontal>.swiper-pagination-bullets, 
+    .swiper-pagination-bullets.swiper-pagination-horizontal, 
+    .swiper-pagination-custom, .swiper-pagination-fraction {
+        left: 0;
+        right: unset;
+        bottom: var(--spacing-xl);
+        width: 100%;
+        justify-content: center;
+    }
+    
+}
+
+
 

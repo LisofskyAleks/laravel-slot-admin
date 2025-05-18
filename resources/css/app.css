@@ -3,6 +3,7 @@
 @import './header.css';
 @import './sidebar.css';
 @import './main-banner.css';
+@import './slots.css';
 
 
 :root {
@@ -10,9 +11,11 @@
   --font-alternative: 'Noto Sans', sans-serif;
 
   --text-blue-color: #0B5EBD;
+  --text-light-blue-color: #7EE8F4;
   --text-light-color: #DEEFFF;
   --text-white-color: #FFFFFF;
   --text-hover-color: #FFD535;
+  --background-primary: #032858;
 
   --spacing-l: 10px;
   --spacing-xl: 15px;
@@ -29,9 +32,23 @@
     box-sizing: border-box;
 }
 
+html, body {
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none; 
+}
+
 
 body {
   font-family: var(--font-default);
+  background-color: var(--background-primary);
+  background-image: url(../../public/images/bg-pattern.png);
+  background-size: 20px auto;
+  background-repeat: repeat;
 }
 
 .container {
@@ -47,4 +64,16 @@ body {
 
 .content {
   width: 100%;
+}
+
+@media screen and (max-width:1279px) {
+  .main-layout {
+    width: 100%; 
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .main-layout {
+    margin: 123px auto;
+  }
 }
