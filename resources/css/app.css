@@ -1,0 +1,50 @@
+
+@import './fonts.css';
+@import './header.css';
+@import './sidebar.css';
+@import './main-banner.css';
+
+
+:root {
+  --font-default: 'Inter', sans-serif;
+  --font-alternative: 'Noto Sans', sans-serif;
+
+  --text-blue-color: #0B5EBD;
+  --text-light-color: #DEEFFF;
+  --text-white-color: #FFFFFF;
+  --text-hover-color: #FFD535;
+
+  --spacing-l: 10px;
+  --spacing-xl: 15px;
+  --spacing-xxl: 20px;
+  --spacing-2xl: 30px;
+
+  --sidebar-width: 232px;
+  --header-height: 60px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+  font-family: var(--font-default);
+}
+
+.container {
+  max-width: 1512px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.main-layout {
+  width: calc(100vw - var(--sidebar-width)); 
+  margin: var(--header-height) 0 0 auto;
+}
+
+.content {
+  width: 100%;
+}

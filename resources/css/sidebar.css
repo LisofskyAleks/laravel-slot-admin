@@ -1,0 +1,126 @@
+.sidebar {
+    background: linear-gradient(90deg, #054392 0%, #032858 100%);
+    padding: 12px;
+    width: fit-content;
+    min-width: var(--sidebar-width);
+    position: fixed;
+    top: var(--header-height);    
+    left: 0;
+    height: calc(100vh - var(--header-height)); 
+    z-index: 999;     
+    overflow-y: scroll;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    scrollbar-width: none;
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none; 
+}
+
+.sidebar__wrapper {
+    position: relative;
+}
+
+.sidebar__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar__list:not(:last-child)::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 6px;
+    background: url(../../public/images/sidebar-border.svg) no-repeat center/cover;
+}
+
+.sidebar__item {
+    width: 100%;
+    height: 44px;
+}
+
+.sidebar__item a {
+    padding-left: 52px;
+    color: var(--text-light-color);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 11.13px;
+    line-height: 19.2px;
+    letter-spacing: 1.28px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+.sidebar__item a::after {
+    content: '';
+    width: 6px;
+    height: 16px;
+    background-color: var(--text-hover-color);
+    clip-path: polygon(100% 50%, 0 0, 0 100%);
+    border-radius: var(--spacing-xxl);
+    display: none;
+    position: absolute;
+    left: 0;
+}
+
+.sidebar__item a:hover {
+    color: var(--text-hover-color);
+}
+
+.sidebar__item a:hover::after {
+    display: block;
+}
+
+.sidebar__actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.sidebar__actions-link {
+    color: var(--text-light-color);
+    text-decoration: none;
+    width: 50%;
+    height: 64px;
+    padding-bottom: var(--spacing-xxl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4px;
+    font-family: var(--font-family-alternative);
+    font-weight: 700;
+    font-style: italic;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: center;
+}
+
+@media screen and (max-width:1279px) {
+    .sidebar {
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar_open {
+        transform: translateX(0);
+    }
+
+}
+
+@media screen and (max-width: 479px) {
+    .sidebar {
+        top: 123px;
+    }
+}
